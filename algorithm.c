@@ -279,33 +279,11 @@ static cl_int queue_bitblock_kernel(struct __clState *clState, struct _dev_blk_c
   num = 0;
   CL_SET_ARG(clState->CLbuffer0);
   CL_SET_ARG(clState->padbuffer8);
+  
   // bmw - search1
   kernel = clState->extra_kernels;
   CL_SET_ARG_0(clState->padbuffer8);
-  // groestl - search2
-  CL_NEXTKERNEL_SET_ARG_0(clState->padbuffer8);
-  // skein - search3
-  CL_NEXTKERNEL_SET_ARG_0(clState->padbuffer8);
-  // jh - search4
-  CL_NEXTKERNEL_SET_ARG_0(clState->padbuffer8);
-  // keccak - search5
-  CL_NEXTKERNEL_SET_ARG_0(clState->padbuffer8);
-  // luffa - search6
-  CL_NEXTKERNEL_SET_ARG_0(clState->padbuffer8);
-  // cubehash - search7
-  CL_NEXTKERNEL_SET_ARG_0(clState->padbuffer8);
-  // shavite - search8
-  CL_NEXTKERNEL_SET_ARG_0(clState->padbuffer8);
-  // simd - search9
-  CL_NEXTKERNEL_SET_ARG_0(clState->padbuffer8);
-  // echo - search10
-  CL_NEXTKERNEL_SET_ARG_0(clState->padbuffer8);
-  // hamsi - search11
-  CL_NEXTKERNEL_SET_ARG_0(clState->padbuffer8);
-  // fugue - search12
-  CL_NEXTKERNEL_SET_ARG_0(clState->padbuffer8);
-  // hamsi - search11
-  CL_NEXTKERNEL_SET_ARG_0(clState->padbuffer8);
+    
   // fugue - search12
   num = 0;
   CL_NEXTKERNEL_SET_ARG(clState->padbuffer8);
