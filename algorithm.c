@@ -54,7 +54,6 @@ const char *algorithm_type_str[] = {
   "Twecoin",
   "Fugue256",
   "NIST",
-  "Tribus",
   "Fresh",
   "Whirlcoin",
   "Neoscrypt",
@@ -282,31 +281,7 @@ static cl_int queue_bitblock_kernel(struct __clState *clState, struct _dev_blk_c
   // bmw - search1
   kernel = clState->extra_kernels;
   CL_SET_ARG_0(clState->padbuffer8);
-  // groestl - search2
-  CL_NEXTKERNEL_SET_ARG_0(clState->padbuffer8);
-  // skein - search3
-  CL_NEXTKERNEL_SET_ARG_0(clState->padbuffer8);
-  // jh - search4
-  CL_NEXTKERNEL_SET_ARG_0(clState->padbuffer8);
-  // keccak - search5
-  CL_NEXTKERNEL_SET_ARG_0(clState->padbuffer8);
-  // luffa - search6
-  CL_NEXTKERNEL_SET_ARG_0(clState->padbuffer8);
-  // cubehash - search7
-  CL_NEXTKERNEL_SET_ARG_0(clState->padbuffer8);
-  // shavite - search8
-  CL_NEXTKERNEL_SET_ARG_0(clState->padbuffer8);
-  // simd - search9
-  CL_NEXTKERNEL_SET_ARG_0(clState->padbuffer8);
-  // echo - search10
-  CL_NEXTKERNEL_SET_ARG_0(clState->padbuffer8);
-  // hamsi - search11
-  CL_NEXTKERNEL_SET_ARG_0(clState->padbuffer8);
-  // fugue - search12
-  CL_NEXTKERNEL_SET_ARG_0(clState->padbuffer8);
-  // hamsi - search11
-  CL_NEXTKERNEL_SET_ARG_0(clState->padbuffer8);
-  // fugue - search12
+  
   num = 0;
   CL_NEXTKERNEL_SET_ARG(clState->padbuffer8);
   CL_SET_ARG(clState->outputBuffer);
@@ -823,8 +798,6 @@ static algorithm_settings_t algos[] = {
   { "talkcoin-mod", ALGO_NIST, "", 1, 1, 1, 0, 0, 0xFF, 0xFFFFULL, 0x0000ffffUL, 4, 8 * 16 * 4194304, 0, talkcoin_regenhash, queue_talkcoin_mod_kernel, gen_hash, append_x11_compiler_options },
 
   { "fresh", ALGO_FRESH, "", 1, 256, 256, 0, 0, 0xFF, 0xFFFFULL, 0x0000ffffUL, 4, 4 * 16 * 4194304, 0, fresh_regenhash, queue_fresh_kernel, gen_hash, NULL },
-  
-  { "tribus", ALGO_TRIBUS, "", 1, 256, 256, 0, 0, 0xFF, 0xFFFFULL, 0x0000ffffUL, 4, 4 * 16 * 4194304, 0, tribus_regenhash, queue_tribus_kernel, gen_hash, NULL },
 
   { "lyra2re", ALGO_LYRA2RE, "", 1, 128, 128, 0, 0, 0xFF, 0xFFFFULL, 0x0000ffffUL, 4, 2 * 8 * 4194304, 0, lyra2re_regenhash, queue_lyra2RE_kernel, gen_hash, NULL },
 
