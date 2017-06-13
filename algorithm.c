@@ -54,6 +54,7 @@ const char *algorithm_type_str[] = {
   "Twecoin",
   "Fugue256",
   "NIST",
+  "Tribus",
   "Fresh",
   "Whirlcoin",
   "Neoscrypt",
